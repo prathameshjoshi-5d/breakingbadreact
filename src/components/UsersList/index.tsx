@@ -20,6 +20,7 @@ const UsersList: React.FC<UserListProps> = ({
         {data.map((item, index) => {
           return (
             <UsersItem
+              key={index.toString()}
               item={item}
               onClick={onClick}
               onClickFavorite={onClickFavorite}

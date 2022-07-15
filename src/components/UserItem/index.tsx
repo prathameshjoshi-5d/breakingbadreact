@@ -19,11 +19,11 @@ const UsersItem: React.FC<UserItemProps> = ({
 
   return (
     <li>
-      <div className={styles.justify}>
-        <div className={styles.userItemMain} onClick={() => onClick(item)}>
+      <div className={styles.main}>
+        <div className={styles.userItem} onClick={() => onClick(item)}>
           <img
             src={item.img}
-            alt={"mage"}
+            alt={"UserImage"}
             width={180}
             height={258}
             style={{ objectFit: "cover" }}

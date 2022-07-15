@@ -1,9 +1,9 @@
-.userItemMain {
+.userItem {
   flex-direction: row;
   display: flex;
   justify-content: space-between;
 }
-.justify {
+.main {
   background-color: #131313;
   flex-direction: row;
   display: flex;
@@ -18,7 +18,7 @@
   cursor: pointer;
   opacity: 1;
 }
-.justify:hover {
+.main:hover {
   transform: scale(1.03);
   background-color: #1c1c1c;
 }

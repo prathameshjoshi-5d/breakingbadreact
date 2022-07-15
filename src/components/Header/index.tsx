@@ -13,17 +13,9 @@ const Header: React.FC<HeaderProps> = ({
 }) => {
   return (
     <div className={styles.header}>
-      {RenderLeftContainer && (
-        <div>
-          <RenderLeftContainer />
-        </div>
-      )}
+      {RenderLeftContainer && <RenderLeftContainer />}
 
-      {RenderMainContainer && (
-        <div>
-          <RenderMainContainer />
-        </div>
-      )}
+      {RenderMainContainer && <RenderMainContainer />}
 
       {RenderRightContainer && <RenderRightContainer />}
     </div>
