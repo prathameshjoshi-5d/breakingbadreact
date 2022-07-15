@@ -1,0 +1,5 @@
+export enum typeActions {
+  SEARCH_DATA = "SEARCH_DATA",
+  SET_DATA = "SET_DATA",
+  SET_FAVORITE_DATA = "SET_FAVORITE_DATA",
+}

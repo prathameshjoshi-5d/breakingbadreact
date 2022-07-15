@@ -1,0 +1,43 @@
+.rightContainerFavoriteScreen {
+  flex-direction: row;
+  display: flex;
+}
+.vectorFavoriteScreen {
+  margin-top: 0px;
+}
+.favoriteFavoriteScreen {
+  margin-left: 20px;
+}
+.favoriteTextFavoriteScreen {
+  color: #18ca75;
+  font-size: 24px;
+  font-family: "RobotoLight";
+}
+.text {
+  color: white;
+  margin-left: 10px;
+  font-size: 24px;
+  font-family: "RobotoBold";
+}
+
+@keyframes fade-in-keyframes {
+  from {
+    width: 0rem;
+    background-color: #070707;
+  }
+  to {
+    width: 15rem;
+    background-color: #232323;
+  }
+}
+
+@keyframes fade-out-keyframes {
+  from {
+    width: 15rem;
+    background-color: #232323;
+  }
+  to {
+    width: 0rem;
+    background-color: #070707;
+  }
+}

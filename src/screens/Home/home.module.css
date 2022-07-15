@@ -1,0 +1,95 @@
+.search_icon_view {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  align-items: center;
+  height: 2.5rem;
+}
+.rightContainer {
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+}
+.favoriteHeader {
+  margin-left: 20px;
+}
+.favorite {
+  margin-left: 20px;
+  cursor: pointer;
+  opacity: 1;
+  transition: opacity 300ms ease;
+}
+.search {
+  cursor: pointer;
+  opacity: 1;
+  transition: opacity 300ms ease;
+}
+.main {
+  background-color: #131313;
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+}
+.text {
+  color: white;
+  margin-left: 10px;
+  font-size: 24px;
+  font-family: "RobotoBold";
+}
+
+.searchTextfield {
+  background-color: #232323;
+  color: white;
+  border: 0;
+  outline: 0;
+  height: 2.5rem;
+  width: 15rem;
+  padding-right: 2.5rem;
+  padding-left: 1rem;
+  border-radius: 5px;
+  animation: fade-in-keyframes 1s;
+}
+.searchTextfield_Active {
+  animation: fade-out-keyframes 1s;
+  background-color: #070707;
+  color: white;
+  border: 0;
+  outline: 0;
+  height: 2.5rem;
+  width: 0rem;
+  padding-right: 2.5rem;
+  padding-left: 1rem;
+  border-radius: 5px;
+}
+.searchTextfield_Hidden {
+  visibility: hidden;
+}
+.searchIcon {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  opacity: 1;
+  transition: opacity 300ms ease;
+}
+
+@keyframes fade-in-keyframes {
+  from {
+    width: 0rem;
+    background-color: #070707;
+  }
+  to {
+    width: 15rem;
+    background-color: #232323;
+  }
+}
+
+@keyframes fade-out-keyframes {
+  from {
+    width: 15rem;
+    background-color: #232323;
+  }
+  to {
+    width: 0rem;
+    background-color: #070707;
+  }
+}
