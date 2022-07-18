@@ -33,7 +33,7 @@ const HomeScreen = () => {
     }
     // setIsLoading(false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [DATA]);
+  }, [DATA, allCharacters]);
 
   useEffect(() => {
     const delayDebounceFn = setTimeout(() => {
