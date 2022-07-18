@@ -1,25 +1,19 @@
+import { motion } from "framer-motion";
 import { useCallback, useEffect, useState } from "react";
 import FontAwesome from "react-fontawesome";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Container from "../../components/container";
 import Header from "../../components/Header";
+import { CharacterData } from "../../components/UserItem/type";
 import UsersList from "../../components/UsersList";
-import { typeActions } from "../../Store/Actions";
 import { searchCharacters } from "../../Store/Characters";
 import { RootState } from "../../Store/Store";
 import styles from "./home.module.css";
-import { motion } from "framer-motion";
-import { CharacterData } from "../../components/UserItem/type";
 
 const HomeScreen = () => {
   const history = useNavigate();
   const DATA = useSelector((state: RootState) => state.characters.data);
-  const charData = useSelector((state: RootState) => state.characters.data);
-  const favData = useSelector(
-    (state: RootState) => state.characters.favoriteData
-  );
-  const dispatch = useDispatch();
   const [allCharacters, setAllCharacters] = useState<CharacterData[]>([]);
   const [searching, setSearching] = useState<boolean>(false);
   const [firstRender, setFirstRender] = useState<boolean>(false);
@@ -115,32 +109,6 @@ const HomeScreen = () => {
     [searching]
   );
 
-  const editFavorite = (item: CharacterData) => {
-    var tempArr = [...charData];
-    var tempFavArr = [...favData];
-    tempArr.forEach((element) => {
-      if (element.char_id === item.char_id) {
-        if (element.favorite === true) {
-          element.favorite = false;
-          const filterChar = favData.filter(
-            (item) => item.char_id !== element.char_id
-          );
-          dispatch({
-            type: typeActions.SET_FAVORITE_DATA,
-            payload: filterChar,
-          });
-        } else {
-          element.favorite = true;
-          tempFavArr.push(element);
-          dispatch({
-            type: typeActions.SET_FAVORITE_DATA,
-            payload: tempFavArr,
-          });
-        }
-      }
-    });
-  };
-
   return (
     <motion.div
       initial={{ translateX: "-100%" }}
@@ -155,7 +123,6 @@ const HomeScreen = () => {
         <UsersList
           data={allCharacters}
           onClick={(data) => history("/Character", { state: { data: data } })}
-          onClickFavorite={(item) => editFavorite(item)}
         />
       </Container>
     </motion.div>

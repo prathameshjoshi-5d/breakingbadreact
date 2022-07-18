@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { ReactComponent as Heart } from "../../assets/Images/HEART.svg";
 import { ReactComponent as HeartFilled } from "../../assets/Images/HEART_FILLED.svg";
 import { CharacterData } from "./type";
@@ -8,14 +8,18 @@ interface UserItemProps {
   item: CharacterData;
   onClick: (item: CharacterData) => void;
   onClickFavorite: (item: CharacterData) => void;
+  favArray: CharacterData[];
 }
 
 const UsersItem: React.FC<UserItemProps> = ({
   item,
   onClick,
   onClickFavorite,
+  favArray,
 }) => {
-  const [isFavorite, setIsFavorite] = useState<boolean>(item.favorite);
+  const isFavorite = favArray.find(
+    (element) => element.char_id === item.char_id
+  );
 
   return (
     <li>
@@ -48,7 +52,6 @@ const UsersItem: React.FC<UserItemProps> = ({
         <div
           className={styles.btn}
           onClick={() => {
-            setIsFavorite((prevState) => !prevState);
             onClickFavorite(item);
           }}
         >

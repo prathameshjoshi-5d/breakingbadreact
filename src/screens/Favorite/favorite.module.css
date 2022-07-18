@@ -1,7 +1,3 @@
-.backArrow {
-  transition: all ease 300ms;
-  cursor: pointer;
-}
 .rightContainerFavoriteScreen {
   flex-direction: row;
   display: flex;

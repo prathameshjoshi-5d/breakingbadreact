@@ -1,7 +1,7 @@
 export interface CharacterData {
   char_id: number;
   name: string;
-  favorite: boolean;
+  // favorite: boolean;
   img: string;
   nickname: string;
   birthday: string;

@@ -47,6 +47,7 @@ const CharacterScreen = () => {
               style={{
                 textShadow: "0 1px 0 rgba(0, 0, 0, 0.1)",
                 color: "#FFFFFF",
+                cursor: "pointer",
               }}
               height={16}
               width={16}
