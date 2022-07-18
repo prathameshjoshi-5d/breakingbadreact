@@ -48,6 +48,7 @@
   padding-left: 1rem;
   border-radius: 5px;
   animation: fade-in-keyframes 300ms;
+  transition: visibility ease 1s;
 }
 .searchTextfield_Active {
   animation: fade-out-keyframes 300ms;
@@ -60,6 +61,8 @@
   padding-right: 2.5rem;
   padding-left: 1rem;
   border-radius: 5px;
+  visibility: hidden;
+  transition: visibility ease 1s;
 }
 .searchTextfield_Hidden {
   visibility: hidden;
@@ -125,9 +128,11 @@
   from {
     width: 15rem;
     background-color: #232323;
+    visibility: visible;
   }
   to {
     width: 0rem;
     background-color: #070707;
+    visibility: hidden;
   }
 }
