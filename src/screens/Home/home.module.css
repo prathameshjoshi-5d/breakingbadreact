@@ -74,6 +74,11 @@
   opacity: 1;
   transition: opacity 300ms ease;
 }
+.emptyRecords {
+  color: #18ca75;
+  font-size: 28px;
+  font-family: "RobotoBold";
+}
 
 .loaderView {
   height: 70vh;

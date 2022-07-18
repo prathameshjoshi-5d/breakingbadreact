@@ -25,7 +25,7 @@ const HomeScreen = () => {
   }, []);
 
   useEffect(() => {
-    if (allCharacters.length === 0) {
+    if (allCharacters && allCharacters.length === 0) {
       setIsLoading(true);
       setAllCharacters(DATA);
     } else {
@@ -33,7 +33,7 @@ const HomeScreen = () => {
     }
     // setIsLoading(false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [DATA, allCharacters]);
+  }, [DATA]);
 
   useEffect(() => {
     const delayDebounceFn = setTimeout(() => {
@@ -132,11 +132,15 @@ const HomeScreen = () => {
           <div className={styles.loaderView}>
             <div className={styles.loader}></div>
           </div>
-        ) : (
+        ) : allCharacters && allCharacters.length !== 0 ? (
           <UsersList
             data={allCharacters}
             onClick={(data) => history("/Character", { state: { data: data } })}
           />
+        ) : (
+          <div className={styles.loaderView}>
+            <span className={styles.emptyRecords}>No records found</span>
+          </div>
         )}
       </Container>
     </motion.div>

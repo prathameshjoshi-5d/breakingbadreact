@@ -66,11 +66,16 @@ const FavoriteScreen = () => {
         RenderRightContainer={renderRightContainer}
       />
       <Container>
-        <UsersList
-          data={allCharacters}
-          onClick={(data) => history("/Character", { state: { data: data } })}
-          // onClickFavorite={(item) => editFavorite(item)}
-        />
+        {allCharacters && allCharacters.length !== 0 ? (
+          <UsersList
+            data={allCharacters}
+            onClick={(data) => history("/Character", { state: { data: data } })}
+          />
+        ) : (
+          <div className={styles.emptyRecordsView}>
+            <span className={styles.emptyRecords}>No records found</span>
+          </div>
+        )}
       </Container>
     </motion.div>
   );
