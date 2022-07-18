@@ -60,12 +60,12 @@ const FavoriteScreen = () => {
       animate={{ translateX: 0 }}
       transition={{ ease: "easeOut" }}
     >
+      <Header
+        RenderLeftContainer={renderLeftContainer}
+        RenderMainContainer={renderMainContainer}
+        RenderRightContainer={renderRightContainer}
+      />
       <Container>
-        <Header
-          RenderLeftContainer={renderLeftContainer}
-          RenderMainContainer={renderMainContainer}
-          RenderRightContainer={renderRightContainer}
-        />
         <UsersList
           data={allCharacters}
           onClick={(data) => history("/Character", { state: { data: data } })}

@@ -123,13 +123,15 @@ const HomeScreen = () => {
       animate={{ translateX: 0 }}
       transition={{ ease: "easeOut" }}
     >
+      <Header
+        RenderLeftContainer={renderLeftContainer}
+        RenderRightContainer={renderRightContainer}
+      />
       <Container>
-        <Header
-          RenderLeftContainer={renderLeftContainer}
-          RenderRightContainer={renderRightContainer}
-        />
         {isLoading ? (
-          <div className={styles.loader}></div>
+          <div className={styles.loaderView}>
+            <div className={styles.loader}></div>
+          </div>
         ) : (
           <UsersList
             data={allCharacters}
