@@ -18,6 +18,7 @@ const HomeScreen = () => {
   const [searching, setSearching] = useState<boolean>(false);
   const [firstRender, setFirstRender] = useState<boolean>(false);
   const [searchText, setSearchText] = useState<string>();
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   useEffect(() => {
     setFirstRender(true);
@@ -25,8 +26,12 @@ const HomeScreen = () => {
 
   useEffect(() => {
     if (allCharacters.length === 0) {
+      setIsLoading(true);
       setAllCharacters(DATA);
+    } else {
+      setIsLoading(false);
     }
+    // setIsLoading(false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [DATA]);
 
@@ -43,6 +48,7 @@ const HomeScreen = () => {
     searchCharacters(value)
       .then((res) => {
         setAllCharacters(res);
+        setIsLoading(false);
       })
       .catch((err) => {});
   };
@@ -90,8 +96,10 @@ const HomeScreen = () => {
               autoComplete={"false"}
               onChange={(e) => {
                 setSearchText(e.target.value);
+                setIsLoading(true);
               }}
               placeholder={"Search"}
+              autoCorrect={"false"}
             />
           </div>
           <img
@@ -120,10 +128,14 @@ const HomeScreen = () => {
           RenderLeftContainer={renderLeftContainer}
           RenderRightContainer={renderRightContainer}
         />
-        <UsersList
-          data={allCharacters}
-          onClick={(data) => history("/Character", { state: { data: data } })}
-        />
+        {isLoading ? (
+          <div className={styles.loader}></div>
+        ) : (
+          <UsersList
+            data={allCharacters}
+            onClick={(data) => history("/Character", { state: { data: data } })}
+          />
+        )}
       </Container>
     </motion.div>
   );
