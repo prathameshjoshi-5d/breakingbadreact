@@ -97,6 +97,7 @@ const HomeScreen = () => {
               onChange={(e) => {
                 setSearchText(e.target.value);
               }}
+              placeholder={"Search"}
             />
           </div>
           <img

@@ -102,9 +102,7 @@ const CharacterScreen = () => {
               <text className={`${styles.textCharacterScreen} ${styles.thin}`}>
                 {data?.occupation[0]}
               </text>
-              <text
-                className={`${styles.favoriteTextCharacterScreen} ${styles.occupation}`}
-              >
+              <text className={`${styles.textCharacterScreen} ${styles.thin}`}>
                 {data?.occupation[1]}
               </text>
             </div>

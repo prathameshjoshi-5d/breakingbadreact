@@ -29,6 +29,7 @@ const FavoriteScreen = () => {
     return (
       <FontAwesome
         name="arrow-left"
+        className="backArrow"
         style={{
           textShadow: "0 1px 0 rgba(0, 0, 0, 0.1)",
           color: "#FFFFFF",
