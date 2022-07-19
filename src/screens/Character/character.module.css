@@ -71,7 +71,7 @@ body {
   flex-direction: column;
   display: flex;
   justify-content: space-between;
-  width: 72ch;
+  width: 78ch;
 }
 .horizontalView {
   flex-direction: row;
@@ -128,7 +128,7 @@ body {
   margin-left: 10px;
 }
 .backArrow {
-  margin-left: 10px;
+  margin-left: 30px;
   margin-top: 10px;
 }
 .bold {
